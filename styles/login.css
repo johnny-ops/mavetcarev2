@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    position: relative;
+}
+
+/* Left Side - Login Form */
+.login-form-section {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo-section i {
+    background: #8BC34A;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.logo-section h1 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.logo-section p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.form-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8BC34A;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.1);
+}
+
+.form-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.password-toggle {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #8BC34A;
+}
+
+.error-message {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border-left: 4px solid #c33;
+}
+
+.login-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #8BC34A 0%, #7CB342 100%);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 195, 74, 0.3);
+}
+
+.form-footer {
+    text-align: center;
+}
+
+.form-footer a {
+    color: #8BC34A;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+    color: #7CB342;
+    text-decoration: underline;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e1e5e9;
+}
+
+.divider span {
+    margin: 0 1rem;
+}
+
+/* Right Side - Pet Illustration */
+.pet-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pet-illustration {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-pet {
+    width: 300px;
+    height: 300px;
+    /* REPLACE THIS WITH YOUR MAIN PET IMAGE */
+    background: url('images/login-main-pet.jpg') center/cover no-repeat;
+    /* Fallback SVG */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="150" cy="180" r="80" fill="white"/><circle cx="130" cy="160" r="8" fill="%23333"/><circle cx="170" cy="160" r="8" fill="%23333"/><ellipse cx="150" cy="180" rx="6" ry="4" fill="%23333"/><path d="M120 200 Q150 215 180 200" stroke="%23333" stroke-width="3" fill="none"/><ellipse cx="110" cy="130" rx="15" ry="20" fill="white"/><ellipse cx="190" cy="130" rx="15" ry="20" fill="white"/></svg>') center/contain no-repeat, white;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.pet-accessory {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 120px;
+    height: 120px;
+    /* REPLACE THIS WITH YOUR PET ACCESSORY IMAGE (like a cat or smaller pet) */
+    background: url('images/login-pet-accessory.png') center/cover no-repeat;
+    /* Fallback SVG */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="70" r="25" fill="rgba(255,255,255,0.9)"/><circle cx="55" cy="65" r="3" fill="%23333"/><circle cx="65" cy="65" r="3" fill="%23333"/><polygon points="45,45 50,35 55,45" fill="rgba(255,255,255,0.9)"/><polygon points="65,45 70,35 75,45" fill="rgba(255,255,255,0.9)"/></svg>') center/contain no-repeat;
+    border-radius: 50%;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.medical-tools {
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    /* REPLACE THIS WITH YOUR MEDICAL TOOL IMAGE */
+    background: url('images/login-stethoscope.png') center/contain no-repeat;
+    /* Fallback SVG */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20 20 Q20 15 25 15 L45 15 Q50 15 50 20 L50 40 Q50 45 45 45 Q40 45 35 50 L35 70 Q35 80 25 80 Q15 80 15 70 L15 50 Q10 45 5 45 Q0 45 0 40 L0 20" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/><circle cx="35" cy="75" r="8" fill="rgba(255,255,255,0.8)"/></svg>') center/contain no-repeat;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite reverse;
+}
+
+/* Floating animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Decorative elements */
+.floating-paws {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.paw {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: floatPaws 6s linear infinite;
+}
+
+.paw:nth-child(1) { left: 10%; animation-delay: 0s; }
+.paw:nth-child(2) { left: 30%; animation-delay: 2s; }
+.paw:nth-child(3) { left: 50%; animation-delay: 4s; }
+.paw:nth-child(4) { left: 70%; animation-delay: 1s; }
+.paw:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes floatPaws {
+    0% { 
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Back to Home Button */
+.back-home {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.back-home:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.back-home i {
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pet-section {
+        display: none;
+    }
+    
+    .login-form-section {
+        padding: 1rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+}
